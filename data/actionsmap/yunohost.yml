@@ -1369,11 +1369,15 @@ ssh:
                 list:
                     action_help: List all users and admin and root with ssh related informations
                     api: GET /ssh/user
+                    configuration:
+                        authenticate: all
 
                 ### ssh_user_enable_ssh()
                 allow-ssh:
                     action_help: Allow the user to uses ssh
                     api: POST /ssh/user/enable-ssh
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1384,6 +1388,8 @@ ssh:
                 disallow-ssh:
                     action_help: Disallow the user to uses ssh
                     api: POST /ssh/user/disable-ssh
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1398,16 +1404,22 @@ ssh:
                 status:
                     action_help: Show if rootlogin is enabled or disabled
                     api: GET /ssh/rootlogin
+                    configuration:
+                        authenticate: all
 
                 ### ssh_rootlogin_enable()
                 enable:
                     action_help: Enable ssh root login
                     api: POST /ssh/rootlogin/enable
+                    configuration:
+                        authenticate: all
 
                 ### ssh_rootlogin_disable()
                 disable:
                     action_help: Enable ssh root login
                     api: POST /ssh/rootlogin/disable
+                    configuration:
+                        authenticate: all
 
         key:
             subcategory_help: Manage user's ssh keys
@@ -1417,6 +1429,8 @@ ssh:
                 list:
                     action_help: Show user's ssh keys
                     api: GET /ssh/key
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1427,6 +1441,8 @@ ssh:
                 add:
                     action_help: Add a new ssh key for this user
                     api: POST /ssh/key/add
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1437,6 +1453,8 @@ ssh:
                 import:
                     action_help: Import a ssh key for this user
                     api: POST /ssh/key/import
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1447,6 +1465,8 @@ ssh:
                 remove:
                     action_help: Remove a ssh key for this user
                     api: DELETE /ssh/key
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1461,6 +1481,8 @@ ssh:
                 list:
                     action_help: Show user's authorized ssh keys
                     api: GET /ssh/authorized-keys
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1471,6 +1493,8 @@ ssh:
                 add:
                     action_help: Add a new authorized ssh key for this user
                     api: POST /ssh/authorized-keys
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
@@ -1481,6 +1505,8 @@ ssh:
                 remove:
                     action_help: Remove an authorized ssh key for this user
                     api: DELETE /ssh/authorized-keys
+                    configuration:
+                        authenticate: all
                     arguments:
                         username:
                             help: Username of the user
